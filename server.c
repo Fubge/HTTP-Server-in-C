@@ -60,7 +60,7 @@ int main() {
 
 int handle_client(int client_socket) {
     char *buffer = malloc(BUFFE_SIZE * sizeof(char));
-    int bytes_read = read(client_socket, buffer, BUFFE_SIZE - 1);
+    int bytes_read = recv(client_socket, buffer, BUFFE_SIZE - 1, 0);
 
     if (bytes_read < 0) {
         perror("Read error");
